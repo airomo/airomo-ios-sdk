@@ -10,8 +10,10 @@
 
 @interface AICategory : NSObject
 
-@property (nonatomic, strong) NSNumber *categoryId;
-@property (nonatomic, strong) NSString *categoryTitle;
+@property (nonatomic, assign) NSInteger categoryId;
+@property (nonatomic, strong) NSString *name;
 
 - (AICategory *)initWithDictionary:(NSDictionary *)dict;
+
++ (NSString*)categoryNameById:(NSInteger)catId;
 @end

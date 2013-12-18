@@ -14,7 +14,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [AIManager setupWithClientId:@"582169394" apiKey:@"k60vg92ehyplqi99fhlnz1bpbxgmvudw"];
+    [AIManager setupWithClientId:@"474820607" apiKey:@"kapdy4ixeo5lq8vehqz2hcopn72bijtm"];
     
     return YES;
 }

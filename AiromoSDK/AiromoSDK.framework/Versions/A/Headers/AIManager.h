@@ -6,11 +6,9 @@
 //  Copyright 2013 Airomo. All rights reserved.
 //
 
-#import "AIReachability.h"
-
 typedef enum {
     AIPlatformIOS          = 1,
-    AIPlatformAndroid     = 2
+    AIPlatformAndroid      = 2
 } AIPlatform;
 
 typedef enum {
@@ -31,80 +29,95 @@ typedef enum {
 @interface AIManager : NSObject
 
 /**
- * Report the current reachability of the API.
- */
-@property (nonatomic, readonly, assign) AINetworkStatus currentReachabilityStatus;
-
-/**
- * Filter applications by platform, default 'all' when is not used.
- */
-@property (nonatomic, assign) AIPlatform platform;
-
-/**
- * Filter applications by store, default 'all' when is not used.
- */
-@property (nonatomic, assign) AIStore store;
-
-/**
  * Filter applications by price, default 'all' when is not used.
  */
 @property (nonatomic, assign) AIPrice price;
 
-/**
- * Search URL.
- */
-@property (nonatomic, strong) NSString *url;
 
 /**
- * Comma separated meta keywords from target page. Can be used together with url parameter for increase relevant of results
- */
-@property (nonatomic, strong) NSString *metaKeywords;
-
-/**
- * Search keywords separated by comma
+ * Search keywords separated by comma.
  */
 @property (nonatomic, strong) NSString *query;
 
 /**
- * List of tags
+ * Search URL. It shouldn't be used together with 'query' parameter.
+ */
+@property (nonatomic, strong) NSString *url;
+
+/**
+ * Comma separated meta keywords from target page. Can be used together with url parameter for increase relevant of results.
+ */
+@property (nonatomic, strong) NSString *metaKeywords;
+
+/**
+ * Array of tags used in search
  */
 @property (nonatomic, strong) NSMutableArray *tags;
 
+/**
+ * Array of categories used in search
+ */
+@property (nonatomic, strong) NSMutableArray *categories;
+
 
 /**
- * @name Getting the Shared API Instance
+ * Search token. It is used for tracking searches.
+ */
+@property (nonatomic, strong) NSString *searchToken;
+
+
+/**
+ * @name Get the Shared API Instance
  */
 + (id)sharedManager;
 
 /**
  * Perform a setting ClientId and ApiKey for Shared API Instance
  *
- * @param clientId - Unique identifier of client
- * @param apiKey - Token for verification of client
+ * @param clientId - Unique identifier of client. Obtained via website.
+ * @param apiKey - Token for verification of client. Obtained via website.
  */
 + (void)setupWithClientId:(NSString *)clientId apiKey:(NSString *)apiKey;
 
 
 /**
- * Perform a POST request to Airomo API to obtain available categories.
+ * Perform a POST request to Airomo API to obtain available categories. Categories are cached inside framework.
  */
 - (void)allCategoriesWithCompletionHandler:(void (^)(id response, NSError *error))completionHandler;
+
+
+/**
+ * Show modal view with search results.
+ *
+ * @param partnerId - Product identifier. One client can have few products, which should tracks separately
+ * @param channelId - Specify filter for analytic
+ * @param offset - Offset
+ * @param size - Number of results per request
+ */
+- (void)showApplicationsWithPartnerId:(NSInteger)partnerId
+                   withChannelId:(NSInteger)channelId
+                      withOffset:(NSInteger)offset
+                        withSize: (NSInteger)size
+                           withCompletionHandler:(void (^)(NSError *error))completionHandler;
+
+/**
+ * Hides modal view with search results.
+ *
+ */
+- (void)dismissPopup;
 
 /**
  * Perform a POST request to Airomo API with the given method name and arguments.
  *
  * @param partnerId - Product identifier. One client can have few products, which should tracks separately
  * @param channelId - Specify filter for analytic
- * @param optionalProperties - RESERVED FOR FUTURE: some addition properties with can be usefull for analytic.
- * @param filter - filter parameters
  * @param offset - Offset
  * @param size - Number of results per request
  */
-- (void)searchApplicationsWithPartnerId:(int)partnerId
-                          withChannelId:(int)channelId
-                            withOptions:(NSMutableDictionary*)optionalProperties
-                             withOffset:(int)offset
-                               withSize: (int)size
+- (void)searchApplicationsWithPartnerId:(NSInteger)partnerId
+                          withChannelId:(NSInteger)channelId
+                             withOffset:(NSInteger)offset
+                               withSize: (NSInteger)size
                   withCompletionHandler:(void (^)(id response, NSError *error))completionHandler;
 
 /**
@@ -112,14 +125,12 @@ typedef enum {
  *
  * @param partnerId - Product identifier. One client can have few products, which should tracks separately
  * @param channelId - Specify filter for analytic
- * @param optionalProperties - RESERVED FOR FUTURE: some addition properties with can be usefull for analytic.
  * @param AppId - Application id
- * @param AppId - Application id
+ * @param searchToken -     Application id
  *
 */
-+ (void)searchApplicationClickWithPartnerId:(int)partnerId
-                 withChannelId:(int)channelId
-                   withOptions:(NSMutableDictionary*)optionalProperties
+- (void)searchApplicationClickWithPartnerId:(NSInteger)partnerId
+                 withChannelId:(NSInteger)channelId
                     withApp:(NSString*)appId
                     withSearchToken:(NSString*)searchToken
          withCompletionHandler:(void (^)(id response, NSError *error))completionHandler;

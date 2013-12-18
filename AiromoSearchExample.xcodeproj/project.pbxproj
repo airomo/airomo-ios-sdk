@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		047F8DFA18397A3C003BCF9A /* AiromoSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047F8DF918397A3C003BCF9A /* AiromoSDK.framework */; };
 		048949981832877800113261 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048949971832877800113261 /* Foundation.framework */; };
 		0489499A1832877800113261 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048949991832877800113261 /* CoreGraphics.framework */; };
 		0489499C1832877800113261 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0489499B1832877800113261 /* UIKit.framework */; };
@@ -22,6 +21,8 @@
 		048949BC1832877800113261 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0489499B1832877800113261 /* UIKit.framework */; };
 		048949C41832877800113261 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 048949C21832877800113261 /* InfoPlist.strings */; };
 		048949C61832877800113261 /* AiromoSearchExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 048949C51832877800113261 /* AiromoSearchExampleTests.m */; };
+		DA74E7831860EA8E00517D74 /* AiromoSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DA74E7811860EA8E00517D74 /* AiromoSDK.bundle */; };
+		DA74E7841860EA8E00517D74 /* AiromoSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA74E7821860EA8E00517D74 /* AiromoSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		047F8DF918397A3C003BCF9A /* AiromoSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AiromoSDK.framework; path = AiromoSDK/AiromoSDK.framework; sourceTree = "<group>"; };
 		048949941832877800113261 /* AiromoSearchExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AiromoSearchExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048949971832877800113261 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		048949991832877800113261 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,6 +55,8 @@
 		048949C11832877800113261 /* AiromoSearchExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AiromoSearchExampleTests-Info.plist"; sourceTree = "<group>"; };
 		048949C31832877800113261 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		048949C51832877800113261 /* AiromoSearchExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AiromoSearchExampleTests.m; sourceTree = "<group>"; };
+		DA74E7811860EA8E00517D74 /* AiromoSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AiromoSDK.bundle; path = AiromoSDK/AiromoSDK.bundle; sourceTree = "<group>"; };
+		DA74E7821860EA8E00517D74 /* AiromoSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AiromoSDK.framework; path = AiromoSDK/AiromoSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				047F8DFA18397A3C003BCF9A /* AiromoSDK.framework in Frameworks */,
+				DA74E7841860EA8E00517D74 /* AiromoSDK.framework in Frameworks */,
 				0489499A1832877800113261 /* CoreGraphics.framework in Frameworks */,
 				0489499C1832877800113261 /* UIKit.framework in Frameworks */,
 				048949981832877800113261 /* Foundation.framework in Frameworks */,
@@ -104,7 +106,8 @@
 		048949961832877800113261 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				047F8DF918397A3C003BCF9A /* AiromoSDK.framework */,
+				DA74E7811860EA8E00517D74 /* AiromoSDK.bundle */,
+				DA74E7821860EA8E00517D74 /* AiromoSDK.framework */,
 				048949971832877800113261 /* Foundation.framework */,
 				048949991832877800113261 /* CoreGraphics.framework */,
 				0489499B1832877800113261 /* UIKit.framework */,
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				048949B31832877800113261 /* Images.xcassets in Resources */,
+				DA74E7831860EA8E00517D74 /* AiromoSDK.bundle in Resources */,
 				048949AB1832877800113261 /* Main_iPhone.storyboard in Resources */,
 				048949A21832877800113261 /* InfoPlist.strings in Resources */,
 			);
@@ -341,6 +345,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "i386 armv7s armv7 arm64";
@@ -377,6 +382,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -392,8 +398,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(srcroot)AiromoSDK",
-					"/Users/mac/Documents/Work/AppCurl/Airomo-SDK-iOS/Examples/AiromoSearchExample/AiromoSDK",
+					"$(srcroot)AiromoSDK/**",
+					"/Users/paul/Documents/Work/AppCurl/Airomo-iOS-Example/AiromoSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AiromoSearchExample/AiromoSearchExample-Prefix.pch";
@@ -401,15 +407,13 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(srcroot)AiromoSDK",
+					"$(srcroot)AiromoSDK/**",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "";
 				VALID_ARCHS = "arm64 armv7s armv7 i386";
 				WRAPPER_EXTENSION = app;
 			};
@@ -423,8 +427,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(srcroot)AiromoSDK",
-					"/Users/mac/Documents/Work/AppCurl/Airomo-SDK-iOS/Examples/AiromoSearchExample/AiromoSDK",
+					"$(srcroot)AiromoSDK/**",
+					"/Users/paul/Documents/Work/AppCurl/Airomo-iOS-Example/AiromoSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AiromoSearchExample/AiromoSearchExample-Prefix.pch";
@@ -432,15 +436,13 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(srcroot)AiromoSDK",
+					"$(srcroot)AiromoSDK/**",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "";
 				VALID_ARCHS = "arm64 armv7s armv7 i386";
 				WRAPPER_EXTENSION = app;
 			};

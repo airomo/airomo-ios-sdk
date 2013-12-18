@@ -51,45 +51,41 @@
 - (IBAction)onSearch:(id)sender
 {
     [self.view endEditing:YES];
-    self.searchButton.enabled = NO;
-
+    
     AIManager *manager = [AIManager sharedManager];
     
-    if (self.queryTextField.text.length)
+    if (self.queryTextField.text.length || self.tagsTextField.text.length || self.urlTextField.text.length || self.metaKeywordsTextField.text.length)
     {
-        
         [indicator startAnimating];
         
+        NSMutableArray *tags = [NSMutableArray array];
+        
         manager.query = self.queryTextField.text;
-        if (self.metaKeywordsTextField.text.length)
-            manager.metaKeywords = self.metaKeywordsTextField.text;
-        if (self.urlTextField.text.length)
-            manager.url = self.urlTextField.text;
-        if (self.tagsTextField.text.length)
-            manager.tags = [NSMutableArray arrayWithArray:[self.tagsTextField.text componentsSeparatedByString:@","]];
-        [manager searchApplicationsWithPartnerId:1 withChannelId:1 withOptions:nil withOffset:1 withSize:10 withCompletionHandler:^(id response, NSError *error)
+        manager.metaKeywords = self.metaKeywordsTextField.text;
+        manager.url = self.urlTextField.text;
+        [tags addObjectsFromArray:[self.tagsTextField.text componentsSeparatedByString:@","]];
+        
+        manager.tags = tags;
+        
+        if (self.priceSegmentControl.selectedSegmentIndex>=0)
         {
-            
-            dispatch_async(dispatch_get_main_queue(),^{
-
-                [indicator stopAnimating];
-                self.searchButton.enabled = YES;
-                if (!error)
-                {
-                    //result as dictionary
-                    NSMutableDictionary *resultDictionary = (NSMutableDictionary*)response;
-                    
-                    self.resultTextView.text = [resultDictionary description];
-                    
-                }
-                else
-                {
-                    [[[UIAlertView alloc] initWithTitle:@"API error" message:[error description] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-                }
-
-            });
-        }];
+            manager.price = (self.priceSegmentControl.selectedSegmentIndex==0) ? AIPriceFree: AIPricePaid;
+        }
+        
+        [manager showApplicationsWithPartnerId:1
+                                 withChannelId:1
+                                    withOffset:0
+                                      withSize:10
+                         withCompletionHandler:^(NSError *error)
+         {
+             
+             if (error) {
+                 [[[UIAlertView alloc] initWithTitle:@"" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+             }
+             
+             //             self.searchButton.enabled = YES;
+             [indicator stopAnimating];
+         }];
     }
-    
 }
 @end
