@@ -9,7 +9,7 @@ iOS library to integrate Airomo Search API into iOS project. The library uses AR
 
 * Xcode 5+
 * iOS 5+ target deployment
-* armv7, armv7s, and arm64 devices and the simulator (not armv6)
+* armv7, armv7s, arm64 devices and the simulator (not armv6)
 * iPhone and iPad of all sizes and resolutions
 
 
@@ -38,6 +38,7 @@ Follow steps described below to install AiromoSDK library:
     
     return YES;	
 }
+```
 
 6. To call API and show results import <AiromoSDK/AiromoSDK.h> and use code:
 
@@ -67,6 +68,6 @@ Follow steps described below to install AiromoSDK library:
                  [[[UIAlertView alloc] initWithTitle:@"" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
              }
      }];
-    
+```    
 
 7. Congratulations! You are done.
