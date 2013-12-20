@@ -1,14 +1,14 @@
 airomo-ios-sdk
 ===============
 
-iOS library to integrate Airomo Search API into iOS project. The library uses ARC and requires at least iOS 5.0.
+iOS library to integrate Airomo Search API into iOS project. The library uses ARC and requires at least iOS 6.0.
 
 
 
 ## Requirements
 
-* Xcode 5+
-* iOS 5+ target deployment
+* Xcode 6+
+* iOS 6+ target deployment
 * armv7, armv7s, arm64 devices and the simulator (not armv6)
 * iPhone and iPad of all sizes and resolutions
 
@@ -25,8 +25,9 @@ Follow steps described below to install AiromoSDK library:
 
 4. Drag&Drop "AiromoSDK.bundle" (containing resources) into your project's.
 
-5. Import the <AiromoSDK/AiromoSDK.h> into application delegate (usually called AppDelegate.m) and configure Airomo SDK with your 'clientId', 'clientKey':
+5. Select application Target in 'Targets' section. Search for "library search" and then add the '$(srcroot)AiromoSDK' into "Library Search Path". 
 
+6. Import the <AiromoSDK/AiromoSDK.h> into application delegate (usually called AppDelegate.m) and configure Airomo SDK with your 'clientId', 'clientKey':
 
 ``` objective-c
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions 
@@ -39,8 +40,7 @@ Follow steps described below to install AiromoSDK library:
     return YES;	
 }
 ```
-
-6. To call API and show results import <AiromoSDK/AiromoSDK.h> and use code:
+7. To call API and show results import <AiromoSDK/AiromoSDK.h> and use code:
 
 ``` objective-c
 	AIManager *manager = [AIManager sharedManager];
@@ -69,5 +69,4 @@ Follow steps described below to install AiromoSDK library:
              }
      }];
 ```    
-
-7. Congratulations! You are done.
+8. Congratulations! You are done.

@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  AiromoSearchExample
 //
-//  Created by Pavel Shpak on 13/11/13.
+//  Created by Pavel Sh. on 13/11/13.
 //  Copyright (c) 2013 Airomo. All rights reserved.
 //
 
@@ -13,7 +13,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+#warning TODO: Setup AIManager with your own ClientID and ApiKey!
     [AIManager setupWithClientId:@"474820607" apiKey:@"kapdy4ixeo5lq8vehqz2hcopn72bijtm"];
     
     return YES;

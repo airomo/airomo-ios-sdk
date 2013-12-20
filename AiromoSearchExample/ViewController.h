@@ -2,7 +2,7 @@
 //  ViewController.h
 //  AiromoSearchExample
 //
-//  Created by Pavl Shpak on 13/11/13.
+//  Created by Pavl Sh. on 13/11/13.
 //  Copyright (c) 2013 Airomo. All rights reserved.
 //
 

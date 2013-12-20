@@ -2,7 +2,7 @@
 //  main.m
 //  AiromoSearchExample
 //
-//  Created by MacBook on 11/12/13.
+//  Created by Pavel Sh. on 11/12/13.
 //  Copyright (c) 2013 Airomo. All rights reserved.
 //
 

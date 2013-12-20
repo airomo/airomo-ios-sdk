@@ -2,14 +2,14 @@
 //  ViewController.m
 //  AiromoSearchExample
 //
-//  Created by Pavel Shpak on 13/11/13.
+//  Created by Pavel Sh. on 13/11/13.
 //  Copyright (c) 2013 Airomo. All rights reserved.
 //
 
 #import "ViewController.h"
 #import <AiromoSDK/AiromoSDK.h>
 
-@interface ViewController ()
+@interface ViewController () <UITextFieldDelegate>
 {
     UIActivityIndicatorView *indicator;
 }
@@ -29,8 +29,7 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
@@ -42,20 +41,28 @@
     [self.searchButton addSubview:indicator];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)onSearch:(id)sender
-{
+#pragma mark - UItextFieldDelegate
+
+- (BOOL) textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+
+#pragma mark - Action methods
+
+- (IBAction)onSearch:(id)sender{
     [self.view endEditing:YES];
     
     AIManager *manager = [AIManager sharedManager];
     
-    if (self.queryTextField.text.length || self.tagsTextField.text.length || self.urlTextField.text.length || self.metaKeywordsTextField.text.length)
-    {
+    if (self.queryTextField.text.length || self.tagsTextField.text.length || self.urlTextField.text.length || self.metaKeywordsTextField.text.length){
+        
         [indicator startAnimating];
         
         NSMutableArray *tags = [NSMutableArray array];
@@ -67,23 +74,21 @@
         
         manager.tags = tags;
         
-        if (self.priceSegmentControl.selectedSegmentIndex>=0)
-        {
+        if (self.priceSegmentControl.selectedSegmentIndex>=0){
             manager.price = (self.priceSegmentControl.selectedSegmentIndex==0) ? AIPriceFree: AIPricePaid;
         }
         
-        [manager showApplicationsWithPartnerId:1
-                                 withChannelId:1
-                                    withOffset:0
-                                      withSize:10
-                         withCompletionHandler:^(NSError *error)
-         {
+        [manager presentFromViewController:self
+                                  animated:YES
+                             withPartnerId:1
+                              withChannelId:1
+                                withOffset:0
+                                  withSize:10
+                     withCompletionHandler:^(NSError *error){
              
              if (error) {
                  [[[UIAlertView alloc] initWithTitle:@"" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
              }
-             
-             //             self.searchButton.enabled = YES;
              [indicator stopAnimating];
          }];
     }

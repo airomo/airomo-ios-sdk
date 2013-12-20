@@ -2,9 +2,11 @@
 //  AIManager.h
 //  Airomo-SDK-iOS
 //
-//  Created by Pavel Shpak on 05/11/13.
+//  Created by Pavel Sh. on 05/11/13.
 //  Copyright 2013 Airomo. All rights reserved.
 //
+
+#import <UIKit/UIKit.h>
 
 typedef enum {
     AIPlatformIOS          = 1,
@@ -77,7 +79,8 @@ typedef enum {
  * @param clientId - Unique identifier of client. Obtained via website.
  * @param apiKey - Token for verification of client. Obtained via website.
  */
-+ (void)setupWithClientId:(NSString *)clientId apiKey:(NSString *)apiKey;
++ (void)setupWithClientId:(NSString *)clientId
+                   apiKey:(NSString *)apiKey;
 
 
 /**
@@ -93,12 +96,15 @@ typedef enum {
  * @param channelId - Specify filter for analytic
  * @param offset - Offset
  * @param size - Number of results per request
+ * @param completionHandler The block called when search is done.
  */
-- (void)showApplicationsWithPartnerId:(NSInteger)partnerId
-                   withChannelId:(NSInteger)channelId
-                      withOffset:(NSInteger)offset
-                        withSize: (NSInteger)size
-                           withCompletionHandler:(void (^)(NSError *error))completionHandler;
+- (void)presentFromViewController:(UIViewController *)viewController
+                         animated:(BOOL)animated
+                    withPartnerId:(NSInteger)partnerId
+                    withChannelId:(NSInteger)channelId
+                       withOffset:(NSInteger)offset
+                         withSize: (NSInteger)size
+            withCompletionHandler:(void (^)(NSError *error))completionHandler;
 
 /**
  * Hides modal view with search results.
@@ -113,6 +119,7 @@ typedef enum {
  * @param channelId - Specify filter for analytic
  * @param offset - Offset
  * @param size - Number of results per request
+ * @param completionHandler The block called when search is done.
  */
 - (void)searchApplicationsWithPartnerId:(NSInteger)partnerId
                           withChannelId:(NSInteger)channelId
@@ -127,7 +134,7 @@ typedef enum {
  * @param channelId - Specify filter for analytic
  * @param AppId - Application id
  * @param searchToken -     Application id
- *
+ * @param completionHandler The block called when search is done.
 */
 - (void)searchApplicationClickWithPartnerId:(NSInteger)partnerId
                  withChannelId:(NSInteger)channelId

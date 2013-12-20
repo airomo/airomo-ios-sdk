@@ -13,7 +13,6 @@
 		048949A21832877800113261 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 048949A01832877800113261 /* InfoPlist.strings */; };
 		048949A41832877800113261 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 048949A31832877800113261 /* main.m */; };
 		048949A81832877800113261 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 048949A71832877800113261 /* AppDelegate.m */; };
-		048949AB1832877800113261 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048949A91832877800113261 /* Main_iPhone.storyboard */; };
 		048949B11832877800113261 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048949B01832877800113261 /* ViewController.m */; };
 		048949B31832877800113261 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048949B21832877800113261 /* Images.xcassets */; };
 		048949BA1832877800113261 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048949B91832877800113261 /* XCTest.framework */; };
@@ -23,6 +22,7 @@
 		048949C61832877800113261 /* AiromoSearchExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 048949C51832877800113261 /* AiromoSearchExampleTests.m */; };
 		DA74E7831860EA8E00517D74 /* AiromoSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DA74E7811860EA8E00517D74 /* AiromoSDK.bundle */; };
 		DA74E7841860EA8E00517D74 /* AiromoSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA74E7821860EA8E00517D74 /* AiromoSDK.framework */; };
+		DA74E7881861D5C500517D74 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048949A91832877800113261 /* Main_iPhone.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,6 @@
 		048949A51832877800113261 /* AiromoSearchExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AiromoSearchExample-Prefix.pch"; sourceTree = "<group>"; };
 		048949A61832877800113261 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		048949A71832877800113261 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		048949AA1832877800113261 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		048949AF1832877800113261 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		048949B01832877800113261 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		048949B21832877800113261 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -57,6 +56,7 @@
 		048949C51832877800113261 /* AiromoSearchExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AiromoSearchExampleTests.m; sourceTree = "<group>"; };
 		DA74E7811860EA8E00517D74 /* AiromoSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AiromoSDK.bundle; path = AiromoSDK/AiromoSDK.bundle; sourceTree = "<group>"; };
 		DA74E7821860EA8E00517D74 /* AiromoSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AiromoSDK.framework; path = AiromoSDK/AiromoSDK.framework; sourceTree = "<group>"; };
+		DA74E7891861D5CF00517D74 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,9 +235,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA74E7881861D5C500517D74 /* Main_iPhone.storyboard in Resources */,
 				048949B31832877800113261 /* Images.xcassets in Resources */,
 				DA74E7831860EA8E00517D74 /* AiromoSDK.bundle in Resources */,
-				048949AB1832877800113261 /* Main_iPhone.storyboard in Resources */,
 				048949A21832877800113261 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,7 +293,7 @@
 		048949A91832877800113261 /* Main_iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				048949AA1832877800113261 /* Base */,
+				DA74E7891861D5CF00517D74 /* en */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -396,18 +396,14 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(srcroot)AiromoSDK/**",
-					"/Users/paul/Documents/Work/AppCurl/Airomo-iOS-Example/AiromoSDK",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AiromoSearchExample/AiromoSearchExample-Prefix.pch";
 				INFOPLIST_FILE = "AiromoSearchExample/AiromoSearchExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(srcroot)AiromoSDK/**",
+					"$(srcroot)AiromoSDK",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
@@ -425,18 +421,14 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(srcroot)AiromoSDK/**",
-					"/Users/paul/Documents/Work/AppCurl/Airomo-iOS-Example/AiromoSDK",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AiromoSearchExample/AiromoSearchExample-Prefix.pch";
 				INFOPLIST_FILE = "AiromoSearchExample/AiromoSearchExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(srcroot)AiromoSDK/**",
+					"$(srcroot)AiromoSDK",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
