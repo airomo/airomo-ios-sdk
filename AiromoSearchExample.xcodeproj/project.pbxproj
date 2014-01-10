@@ -20,9 +20,10 @@
 		048949BC1832877800113261 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0489499B1832877800113261 /* UIKit.framework */; };
 		048949C41832877800113261 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 048949C21832877800113261 /* InfoPlist.strings */; };
 		048949C61832877800113261 /* AiromoSearchExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 048949C51832877800113261 /* AiromoSearchExampleTests.m */; };
-		DA74E7831860EA8E00517D74 /* AiromoSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DA74E7811860EA8E00517D74 /* AiromoSDK.bundle */; };
-		DA74E7841860EA8E00517D74 /* AiromoSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA74E7821860EA8E00517D74 /* AiromoSDK.framework */; };
 		DA74E7881861D5C500517D74 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048949A91832877800113261 /* Main_iPhone.storyboard */; };
+		DAEC0406187F205100BBF1B7 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAEC0404187F205100BBF1B7 /* Main_iPad.storyboard */; };
+		DAEC040F187F2F4800BBF1B7 /* AiromoSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DAEC040D187F2F4800BBF1B7 /* AiromoSDK.bundle */; };
+		DAEC0410187F2F4800BBF1B7 /* AiromoSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAEC040E187F2F4800BBF1B7 /* AiromoSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +55,10 @@
 		048949C11832877800113261 /* AiromoSearchExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AiromoSearchExampleTests-Info.plist"; sourceTree = "<group>"; };
 		048949C31832877800113261 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		048949C51832877800113261 /* AiromoSearchExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AiromoSearchExampleTests.m; sourceTree = "<group>"; };
-		DA74E7811860EA8E00517D74 /* AiromoSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AiromoSDK.bundle; path = AiromoSDK/AiromoSDK.bundle; sourceTree = "<group>"; };
-		DA74E7821860EA8E00517D74 /* AiromoSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AiromoSDK.framework; path = AiromoSDK/AiromoSDK.framework; sourceTree = "<group>"; };
 		DA74E7891861D5CF00517D74 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		DAEC0405187F205100BBF1B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		DAEC040D187F2F4800BBF1B7 /* AiromoSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AiromoSDK.bundle; path = AiromoSDK/AiromoSDK.bundle; sourceTree = "<group>"; };
+		DAEC040E187F2F4800BBF1B7 /* AiromoSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AiromoSDK.framework; path = AiromoSDK/AiromoSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA74E7841860EA8E00517D74 /* AiromoSDK.framework in Frameworks */,
+				DAEC0410187F2F4800BBF1B7 /* AiromoSDK.framework in Frameworks */,
 				0489499A1832877800113261 /* CoreGraphics.framework in Frameworks */,
 				0489499C1832877800113261 /* UIKit.framework in Frameworks */,
 				048949981832877800113261 /* Foundation.framework in Frameworks */,
@@ -106,8 +108,8 @@
 		048949961832877800113261 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DA74E7811860EA8E00517D74 /* AiromoSDK.bundle */,
-				DA74E7821860EA8E00517D74 /* AiromoSDK.framework */,
+				DAEC040D187F2F4800BBF1B7 /* AiromoSDK.bundle */,
+				DAEC040E187F2F4800BBF1B7 /* AiromoSDK.framework */,
 				048949971832877800113261 /* Foundation.framework */,
 				048949991832877800113261 /* CoreGraphics.framework */,
 				0489499B1832877800113261 /* UIKit.framework */,
@@ -122,6 +124,7 @@
 				048949A61832877800113261 /* AppDelegate.h */,
 				048949A71832877800113261 /* AppDelegate.m */,
 				048949A91832877800113261 /* Main_iPhone.storyboard */,
+				DAEC0404187F205100BBF1B7 /* Main_iPad.storyboard */,
 				048949AF1832877800113261 /* ViewController.h */,
 				048949B01832877800113261 /* ViewController.m */,
 				048949B21832877800113261 /* Images.xcassets */,
@@ -235,9 +238,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAEC0406187F205100BBF1B7 /* Main_iPad.storyboard in Resources */,
+				DAEC040F187F2F4800BBF1B7 /* AiromoSDK.bundle in Resources */,
 				DA74E7881861D5C500517D74 /* Main_iPhone.storyboard in Resources */,
 				048949B31832877800113261 /* Images.xcassets in Resources */,
-				DA74E7831860EA8E00517D74 /* AiromoSDK.bundle in Resources */,
 				048949A21832877800113261 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +308,14 @@
 				048949C31832877800113261 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DAEC0404187F205100BBF1B7 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAEC0405187F205100BBF1B7 /* en */,
+			);
+			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -396,7 +408,10 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/paul/Documents/Work/AppCurl/Airomo-SDK-iOS-Example/AiromoSDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AiromoSearchExample/AiromoSearchExample-Prefix.pch";
 				INFOPLIST_FILE = "AiromoSearchExample/AiromoSearchExample-Info.plist";
@@ -421,7 +436,10 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/paul/Documents/Work/AppCurl/Airomo-SDK-iOS-Example/AiromoSDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AiromoSearchExample/AiromoSearchExample-Prefix.pch";
 				INFOPLIST_FILE = "AiromoSearchExample/AiromoSearchExample-Info.plist";

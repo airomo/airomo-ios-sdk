@@ -2,7 +2,6 @@
 //  AIManager.h
 //  Airomo-SDK-iOS
 //
-//  Created by Pavel Sh. on 05/11/13.
 //  Copyright 2013 Airomo. All rights reserved.
 //
 
@@ -25,8 +24,15 @@ typedef enum {
     AIPricePaid
 } AIPrice;
 
+typedef enum {
+    AIPhoneListTypeList    = 1,
+    AIPhoneListTypeTile    = 2
+} AIPhoneListType;
+
 /**
- * This object is used to perform API request.
+ * Main interface for working with the Airomo API.
+ * It provides methods to search applications by phrase/word, meta keywords, url and tags.
+ * Search results are can be shown as modal view or returned as JSON.
  */
 @interface AIManager : NSObject
 
@@ -61,12 +67,20 @@ typedef enum {
  */
 @property (nonatomic, strong) NSMutableArray *categories;
 
+/**
+ * Type of application list (list or tiles)
+ */
+@property (nonatomic, assign) AIPhoneListType phoneListType;
 
 /**
  * Search token. It is used for tracking searches.
  */
 @property (nonatomic, strong) NSString *searchToken;
 
+/**
+ * Number of search results per request.
+ */
+@property (nonatomic, assign) NSInteger pageSize;
 
 /**
  * @name Get the Shared API Instance
@@ -82,24 +96,17 @@ typedef enum {
 + (void)setupWithClientId:(NSString *)clientId
                    apiKey:(NSString *)apiKey;
 
-
-/**
- * Perform a POST request to Airomo API to obtain available categories. Categories are cached inside framework.
- */
-- (void)allCategoriesWithCompletionHandler:(void (^)(id response, NSError *error))completionHandler;
-
-
 /**
  * Show modal view with search results.
  *
+ * @param viewController - view controller which will show search result modally, if nil - window subview will be added
  * @param partnerId - Product identifier. One client can have few products, which should tracks separately
  * @param channelId - Specify filter for analytic
  * @param offset - Offset
  * @param size - Number of results per request
- * @param completionHandler The block called when search is done.
+ * @param completionHandler The block called when search is done. Use to get error from API.
  */
 - (void)presentFromViewController:(UIViewController *)viewController
-                         animated:(BOOL)animated
                     withPartnerId:(NSInteger)partnerId
                     withChannelId:(NSInteger)channelId
                        withOffset:(NSInteger)offset
@@ -107,13 +114,13 @@ typedef enum {
             withCompletionHandler:(void (^)(NSError *error))completionHandler;
 
 /**
- * Hides modal view with search results.
+ * Hide modal view with search results.
  *
  */
 - (void)dismissPopup;
 
 /**
- * Perform a POST request to Airomo API with the given method name and arguments.
+ * Perform a POST request to Airomo API with the given method name and arguments. Method returns JSON.
  *
  * @param partnerId - Product identifier. One client can have few products, which should tracks separately
  * @param channelId - Specify filter for analytic
@@ -128,17 +135,24 @@ typedef enum {
                   withCompletionHandler:(void (^)(id response, NSError *error))completionHandler;
 
 /**
- * Perform a POST request to Airomo API to track user clicks.
+ * Perform a POST request to Airomo API to track user clicks when using JSON and own UI
  *
  * @param partnerId - Product identifier. One client can have few products, which should tracks separately
  * @param channelId - Specify filter for analytic
  * @param AppId - Application id
- * @param searchToken -     Application id
+ * @param searchToken - token for current search
  * @param completionHandler The block called when search is done.
+ *
 */
 - (void)searchApplicationClickWithPartnerId:(NSInteger)partnerId
                  withChannelId:(NSInteger)channelId
                     withApp:(NSString*)appId
                     withSearchToken:(NSString*)searchToken
          withCompletionHandler:(void (^)(id response, NSError *error))completionHandler;
+
+/**
+ * Perform a POST request to Airomo API to obtain available categories. Categories are cached inside framework.
+ */
+- (void)allCategoriesWithCompletionHandler:(void (^)(id response, NSError *error))completionHandler;
+
 @end
