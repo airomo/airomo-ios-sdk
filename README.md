@@ -17,7 +17,7 @@ iOS library to integrate Airomo Search API into iOS project. The library uses AR
 
 Follow steps described below to install AiromoSDK library:
 
-1. Register your application on [Airomo API website](http://www.airomo.com/apps/). Make sure you got your 'clientId', 'clientKey' and application 'id'.
+1. Register your application on [Airomo API website](http://developer.airomo.com/apps/). Make sure you got your 'clientId', 'clientKey' and application 'id'.
 
 2. Download latest version of AiromoSDK from [Airomo iOS SDK repository](http://www.airomo.com/apps/).
 
