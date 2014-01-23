@@ -1,6 +1,6 @@
 //
 //  AIManager.h
-//  Airomo-SDK-iOS
+//  AiromoSDK
 //
 //  Copyright 2013 Airomo. All rights reserved.
 //
@@ -83,6 +83,11 @@ typedef enum {
 @property (nonatomic, assign) NSInteger pageSize;
 
 /**
+ * Number of sponsored applications per request.
+ */
+@property (nonatomic, assign) NSInteger adSize;
+
+/**
  * @name Get the Shared API Instance
  */
 + (id)sharedManager;
@@ -111,6 +116,8 @@ typedef enum {
                     withChannelId:(NSInteger)channelId
                        withOffset:(NSInteger)offset
                          withSize: (NSInteger)size
+                            withAdSize: (NSInteger)adSize
+                     withAdOffset:(NSInteger)adOffset
             withCompletionHandler:(void (^)(NSError *error))completionHandler;
 
 /**
@@ -132,22 +139,8 @@ typedef enum {
                           withChannelId:(NSInteger)channelId
                              withOffset:(NSInteger)offset
                                withSize: (NSInteger)size
-                  withCompletionHandler:(void (^)(id response, NSError *error))completionHandler;
-
-/**
- * Perform a POST request to Airomo API to track user clicks when using JSON and own UI
- *
- * @param partnerId - Product identifier. One client can have few products, which should tracks separately
- * @param channelId - Specify filter for analytic
- * @param AppId - Application id
- * @param searchToken - token for current search
- * @param completionHandler The block called when search is done.
- *
-*/
-- (void)searchApplicationClickWithPartnerId:(NSInteger)partnerId
-                 withChannelId:(NSInteger)channelId
-                    withApp:(NSString*)appId
-                    withSearchToken:(NSString*)searchToken
+                             withAdSize: (NSInteger)adSize
+                           withAdOffset:(NSInteger)adOffset
          withCompletionHandler:(void (^)(id response, NSError *error))completionHandler;
 
 /**

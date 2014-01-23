@@ -108,13 +108,15 @@
             manager.price = (self.priceSegmentControl.selectedSegmentIndex==0) ? AIPriceFree : AIPricePaid;
         }
         
-        manager.phoneListType = (self.listTypeSegmentControl.selectedSegmentIndex==0) ? AIPhoneListTypeList : AIPhoneListTypeTile;
+        manager.phoneListType = (self.listTypeSegmentControl.selectedSegmentIndex==1) ?  AIPhoneListTypeTile : AIPhoneListTypeList;
         
         [manager presentFromViewController:self
                                     withPartnerId:1
                                     withChannelId:1
                                        withOffset:0
                                   withSize:(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 15 : (manager.phoneListType == AIPhoneListTypeTile)?28:10
+                                withAdSize:2
+                              withAdOffset:0
                             withCompletionHandler:^(NSError *error)
          {
              
@@ -160,6 +162,8 @@
                                    withChannelId:1
                                       withOffset:0
                                         withSize:10
+                                      withAdSize:2
+                                    withAdOffset:0
                            withCompletionHandler:^(id response, NSError *error)
         {
 

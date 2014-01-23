@@ -14,8 +14,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-#warning TODO: Setup AIManager with your own ClientID and ApiKey!
-    [AIManager setupWithClientId:@"474820607" apiKey:@"kapdy4ixeo5lq8vehqz2hcopn72bijtm"];
+#warning TODO: Setup AIManager with your own ClientID and ApiKey
+    [AIManager setupWithClientId:@"829696912" apiKey:@"qtfoigrl1awgbnaj1m8tztpmy4jjt45y"];
     
     return YES;
 }
