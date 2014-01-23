@@ -15,17 +15,17 @@ iOS library to integrate Airomo Search API into iOS project. The library uses AR
 
 ##Getting Started
 
-Follow steps described below to install AiromoSDK library:
+Follow steps described below to install AiromoSDK framework:
 
-1. Register your application on [Airomo API website](http://www.airomo.com/apps/). Make sure you got your 'clientId', 'clientKey' and application 'id'.
+* Register your application on [Airomo API website](http://www.airomo.com/apps/). Make sure you got your 'clientId', 'clientKey' and application 'id'.
 
-2. Download latest version of AiromoSDK with example project from [Airomo iOS SDK repository](https://github.com/airomo/airomo-ios-sdk/archive/master.zip).
+* Download latest version of AiromoSDK with example project from [Airomo iOS SDK repository](https://github.com/airomo/airomo-ios-sdk/archive/master.zip).
 
-3. Drag&Drop "AiromoSDK.framework" (containing libAiromoSDK.a and Headers) and "AiromoSDK.bundle" (containing resources) into your project's "Frameworks" section.
+* Drag&Drop "AiromoSDK.framework" (containing libAiromoSDK.a and Headers) and "AiromoSDK.bundle" (containing resources) into your project's "Frameworks" section.
 
-4. Select application Target in 'Targets' section. Search for "library search" and then add the '$(srcroot)AiromoSDK' into "Library Search Path". 
+* Select application Target in 'Targets' section. Search for "library search" and then add the '$(srcroot)AiromoSDK' into "Library Search Path". 
 
-5. Import the <AiromoSDK/AiromoSDK.h> into application delegate (usually called AppDelegate.m) and configure Airomo SDK with your 'clientId', 'clientKey':
+* Import the <AiromoSDK/AiromoSDK.h> into application delegate (usually called AppDelegate.m) and configure Airomo SDK with your 'clientId', 'clientKey':
 
 ``` objective-c
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions 
@@ -38,7 +38,8 @@ Follow steps described below to install AiromoSDK library:
     return YES;	
 }
 ```
-6. To call API and show results in modal view - import <AiromoSDK/AiromoSDK.h> and use code:
+
+* To call API and show results in modal view - import <AiromoSDK/AiromoSDK.h> and use code:
 
 ``` objective-c
 	AIManager *manager = [AIManager sharedManager];
@@ -70,9 +71,10 @@ Follow steps described below to install AiromoSDK library:
                  [[[UIAlertView alloc] initWithTitle:@"" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
              }
      }];
-```    
+```
 
 If you have own UI style, you can receive search results as JSON by calling this method:
+
 ``` objective-c
 	AIManager *manager = [AIManager sharedManager];
 	
@@ -101,5 +103,6 @@ If you have own UI style, you can receive search results as JSON by calling this
                  [[[UIAlertView alloc] initWithTitle:@"" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
              }
      }];
-```    
-7. Congratulations! You are done.
+```
+
+* Congratulations! You are done.
