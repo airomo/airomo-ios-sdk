@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *tagsTextField;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *priceSegmentControl;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *listTypeSegmentControl;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *deviceTypeSegnemtControl;
 @property (weak, nonatomic) IBOutlet UITextView *resultTextView;
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
 
@@ -110,6 +111,12 @@
         
         manager.phoneListType = (self.listTypeSegmentControl.selectedSegmentIndex==1) ?  AIPhoneListTypeTile : AIPhoneListTypeList;
         
+        if (self.deviceTypeSegnemtControl.selectedSegmentIndex>=0)
+        {
+            manager.deviceType = (self.deviceTypeSegnemtControl.selectedSegmentIndex==0) ? AIDeviceTypePhone : AIDeviceTypePad;
+        }
+        
+        
         [manager presentFromViewController:self
                                     withPartnerId:1
                                     withChannelId:1
@@ -158,6 +165,11 @@
             manager.price = (self.priceSegmentControl.selectedSegmentIndex==0) ? AIPriceFree: AIPricePaid;
         }
     
+        if (self.deviceTypeSegnemtControl.selectedSegmentIndex>=0)
+        {
+            manager.deviceType = (self.deviceTypeSegnemtControl.selectedSegmentIndex==0) ? AIDeviceTypePhone : AIDeviceTypePad;
+        }
+        
         [manager searchApplicationsWithPartnerId:1
                                    withChannelId:1
                                       withOffset:0

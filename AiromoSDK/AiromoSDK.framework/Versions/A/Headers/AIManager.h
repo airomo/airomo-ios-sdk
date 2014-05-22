@@ -29,6 +29,12 @@ typedef enum {
     AIPhoneListTypeTile    = 2
 } AIPhoneListType;
 
+typedef enum {
+    AIDeviceTypePhone    = 1,
+    AIDeviceTypePad      = 2
+} AIDeviceType;
+
+
 /**
  * Main interface for working with the Airomo API.
  * It provides methods to search applications by phrase/word, meta keywords, url and tags.
@@ -40,6 +46,11 @@ typedef enum {
  * Filter applications by price, default 'all' when is not used.
  */
 @property (nonatomic, assign) AIPrice price;
+
+/**
+ * Filter applications by type, default is empty when all device types are required.
+ */
+@property (nonatomic, assign) AIDeviceType deviceType;
 
 
 /**
